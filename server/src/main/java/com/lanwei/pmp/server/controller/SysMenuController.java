@@ -160,6 +160,22 @@ public class SysMenuController extends AbstractController{
         return response;
     }
 
+    //获取首页导航菜单列表
+    @RequestMapping("/nav")
+    public BaseResponse nav(){
+        BaseResponse response=new BaseResponse(StatusCode.Success);
+        Map<String,Object> resMap= Maps.newHashMap();
+        try {
+            List<SysMenuEntity> list=sysMenuService.getUserMenuList(getUserId());
+            resMap.put("menuList",list);
+        }catch (Exception e){
+            response=new BaseResponse(StatusCode.Fail.getCode(),e.getMessage());
+        }
+        response.setData(resMap);
+
+        return response;
+    }
+
 
 
     //验证参数是否正确

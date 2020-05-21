@@ -23,6 +23,16 @@
 		ON userRole.role_id = roleDept.role_id
 		WHERE userRole.user_id = #{userId}
     </select>
+
+    <!--查询用户的所有菜单id-->
+    <select id="queryAllMenuId" resultType="long">
+        SELECT
+        menu.menu_id
+        FROM sys_user_role AS userRole LEFT JOIN sys_role_menu AS roleMenu ON userRole.role_id = roleMenu.role_id
+        LEFT JOIN sys_menu AS menu ON menu.menu_id = roleMenu.menu_id
+        WHERE userRole.user_id = #{userId}
+        AND menu.type != 2
+    </select>
 </mapper>
 
 
