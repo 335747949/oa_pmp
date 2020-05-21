@@ -1,5 +1,5 @@
 ## 平台简介
-## lanwei
+## 企业员工权限管理平台
 ### 管理端：http://localhost:8019/pmp
 
 ### 管理员账号：admin
