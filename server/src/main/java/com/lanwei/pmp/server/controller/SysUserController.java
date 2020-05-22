@@ -8,6 +8,7 @@ import com.lanwei.pmp.common.utils.Constant;
 import com.lanwei.pmp.common.utils.PageUtil;
 import com.lanwei.pmp.common.utils.ValidatorUtil;
 import com.lanwei.pmp.model.entity.SysUserEntity;
+import com.lanwei.pmp.server.annotation.LogAnnotation;
 import com.lanwei.pmp.server.service.SysUserService;
 import com.lanwei.pmp.server.shiro.ShiroUtil;
 import com.sun.org.apache.bcel.internal.generic.NEW;
@@ -50,6 +51,7 @@ public class SysUserController extends AbstractController{
 
     //修改密码
     @RequestMapping(value = "/password",method = RequestMethod.POST)
+    @LogAnnotation("修改登录密码")
     public BaseResponse updatePassword(String password,String newPassword){
         if(StringUtils.isBlank(password) && StringUtils.isBlank(newPassword)){
             return new BaseResponse(StatusCode.PasswordCanNotBlank);
