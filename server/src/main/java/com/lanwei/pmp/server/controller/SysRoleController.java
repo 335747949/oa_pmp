@@ -6,6 +6,7 @@ import com.lanwei.pmp.common.response.StatusCode;
 import com.lanwei.pmp.common.utils.PageUtil;
 import com.lanwei.pmp.common.utils.ValidatorUtil;
 import com.lanwei.pmp.model.entity.SysRoleEntity;
+import com.lanwei.pmp.server.annotation.LogAnnotation;
 import com.lanwei.pmp.server.service.SysRoleDeptService;
 import com.lanwei.pmp.server.service.SysRoleMenuService;
 import com.lanwei.pmp.server.service.SysRoleService;
@@ -55,6 +56,7 @@ public class SysRoleController extends AbstractController{
     }
 
     //新增
+    @LogAnnotation("新增角色")
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     @RequiresPermissions("sys:role:save")
     public BaseResponse save(@RequestBody @Validated SysRoleEntity entity, BindingResult result){
@@ -102,6 +104,7 @@ public class SysRoleController extends AbstractController{
     }
 
     //修改
+    @LogAnnotation("修改角色")
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @RequiresPermissions("sys:role:update")
     public BaseResponse update(@RequestBody @Validated SysRoleEntity entity, BindingResult result) {
@@ -121,6 +124,7 @@ public class SysRoleController extends AbstractController{
     }
 
     //删除
+    @LogAnnotation("删除角色")
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     @RequiresPermissions("sys:role:delete")
     public BaseResponse delete(@RequestBody Long[] ids){

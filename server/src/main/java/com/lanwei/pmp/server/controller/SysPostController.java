@@ -6,6 +6,7 @@ import com.lanwei.pmp.common.response.StatusCode;
 import com.lanwei.pmp.common.utils.PageUtil;
 import com.lanwei.pmp.common.utils.ValidatorUtil;
 import com.lanwei.pmp.model.entity.SysPostEntity;
+import com.lanwei.pmp.server.annotation.LogAnnotation;
 import com.lanwei.pmp.server.service.SysPostService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -48,6 +49,7 @@ public class SysPostController extends AbstractController{
 
 
     //新增
+    @LogAnnotation("新增岗位")
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     @RequiresPermissions("sys:post:save")
     public BaseResponse save(@RequestBody @Validated SysPostEntity entity, BindingResult result){
@@ -85,6 +87,7 @@ public class SysPostController extends AbstractController{
     }
 
     //修改
+    @LogAnnotation("修改岗位")
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @RequiresPermissions("sys:post:update")
     public BaseResponse update(@RequestBody @Validated SysPostEntity entity, BindingResult result){
@@ -107,6 +110,7 @@ public class SysPostController extends AbstractController{
     }
 
     //删除
+    @LogAnnotation("删除岗位")
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     @RequiresPermissions("sys:post:delete")
     public BaseResponse delete(@RequestBody Long[] ids){

@@ -8,6 +8,7 @@ import com.lanwei.pmp.common.response.StatusCode;
 import com.lanwei.pmp.common.utils.Constant;
 import com.lanwei.pmp.common.utils.ValidatorUtil;
 import com.lanwei.pmp.model.entity.SysDeptEntity;
+import com.lanwei.pmp.server.annotation.LogAnnotation;
 import com.lanwei.pmp.server.service.SysDeptService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -72,6 +73,7 @@ public class SysDeptController extends AbstractController{
     }
 
     //新增
+    @LogAnnotation("新增部门")
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     @RequiresPermissions("sys:dept:save")
     public BaseResponse save(@RequestBody @Validated SysDeptEntity entity, BindingResult result){
@@ -109,6 +111,7 @@ public class SysDeptController extends AbstractController{
     }
 
     //修改
+    @LogAnnotation("修改部门")
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @RequiresPermissions("sys:dept:update")
     public BaseResponse update(@RequestBody @Validated SysDeptEntity entity, BindingResult result){
@@ -131,6 +134,7 @@ public class SysDeptController extends AbstractController{
     }
 
     //删除
+    @LogAnnotation("删除部门")
     @RequestMapping(value = "/delete")
     @RequiresPermissions("sys:dept:delete")
     public BaseResponse delete(Long deptId){

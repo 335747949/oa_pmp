@@ -96,6 +96,7 @@ public class SysUserController extends AbstractController{
     }
 
     //新增
+    @LogAnnotation("新增用户")
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     @RequiresPermissions("sys:user:save")
     public BaseResponse save(@RequestBody @Validated SysUserEntity entity, BindingResult result){
@@ -134,6 +135,7 @@ public class SysUserController extends AbstractController{
     }
 
     //修改更新用户信息
+    @LogAnnotation("修改用户详情")
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @RequiresPermissions("sys:user:update")
     public BaseResponse update(@RequestBody @Validated SysUserEntity entity, BindingResult result){
@@ -153,6 +155,7 @@ public class SysUserController extends AbstractController{
     }
 
     //删除
+    @LogAnnotation("删除用户")
     @RequestMapping("/delete")
     @RequiresPermissions("sys:user:delete")
     public BaseResponse delete(@RequestBody Long[] ids ){
@@ -178,6 +181,7 @@ public class SysUserController extends AbstractController{
     }
 
     //重置密码
+    @LogAnnotation("重置密码")
     @RequestMapping("/psd/reset")
     @RequiresPermissions("sys:user:resetPsd")
     public BaseResponse resetPassword(@RequestBody Long[] ids){

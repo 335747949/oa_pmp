@@ -1,7 +1,10 @@
 package com.lanwei.pmp.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lanwei.pmp.common.utils.PageUtil;
 import com.lanwei.pmp.model.entity.SysLogEntity;
+
+import java.util.Map;
 
 /**
  * @author lanwei
@@ -9,5 +12,7 @@ import com.lanwei.pmp.model.entity.SysLogEntity;
  */
 public interface SysLogService extends IService<SysLogEntity>{
 
+        PageUtil queryPage(Map<String ,Object> params);
 
+        void truncate();
 }

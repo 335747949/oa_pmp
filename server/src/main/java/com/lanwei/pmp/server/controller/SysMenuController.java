@@ -5,6 +5,7 @@ import com.lanwei.pmp.common.response.BaseResponse;
 import com.lanwei.pmp.common.response.StatusCode;
 import com.lanwei.pmp.common.utils.Constant;
 import com.lanwei.pmp.model.entity.SysMenuEntity;
+import com.lanwei.pmp.server.annotation.LogAnnotation;
 import com.lanwei.pmp.server.service.SysMenuService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -76,6 +77,7 @@ public class SysMenuController extends AbstractController{
     }
 
     //新建
+    @LogAnnotation("新增菜单")
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     @RequiresPermissions("sys:menu:save")
     public BaseResponse save(@RequestBody SysMenuEntity entity){
@@ -113,6 +115,7 @@ public class SysMenuController extends AbstractController{
     }
 
     //修改
+    @LogAnnotation("修改菜单")
      @RequestMapping(value = "/update",method = RequestMethod.POST)
      @RequiresPermissions("sys:menu:update")
      public BaseResponse update(@RequestBody SysMenuEntity entity){
@@ -131,6 +134,7 @@ public class SysMenuController extends AbstractController{
      }
 
      //删除
+     @LogAnnotation("删除菜单")
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
     @RequiresPermissions("sys:menu:delete")
     public BaseResponse delete(Long menuId){
