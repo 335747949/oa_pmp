@@ -1,6 +1,5 @@
 package com.lanwei.pmp.server.controller;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.google.common.collect.Maps;
 import com.lanwei.pmp.common.response.BaseResponse;
 import com.lanwei.pmp.common.response.StatusCode;
@@ -8,7 +7,6 @@ import com.lanwei.pmp.common.utils.PageUtil;
 import com.lanwei.pmp.common.utils.ValidatorUtil;
 import com.lanwei.pmp.model.entity.SysDictEntity;
 import com.lanwei.pmp.server.annotation.LogAnnotation;
-import com.lanwei.pmp.server.service.SysDeptService;
 import com.lanwei.pmp.server.service.SysDictService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
