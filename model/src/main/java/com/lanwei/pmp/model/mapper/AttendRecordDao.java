@@ -15,6 +15,8 @@ public interface AttendRecordDao extends BaseMapper<AttendRecordEntity> {
 
     List<AttendRecordEntity> queryPage(IPage<AttendRecordEntity> page , @Param("paramMap") Map<String, Object> paramMap);
 
+    List<AttendRecordEntity> selectExportData(Map<String, Object> params);
+
 
     //List<AttendRecordEntity> selectAllMysql(Map<String,Object> params);
 }
