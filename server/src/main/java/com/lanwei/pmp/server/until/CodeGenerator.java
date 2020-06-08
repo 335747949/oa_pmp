@@ -83,7 +83,7 @@ public class CodeGenerator {
         // 全局配置
         autoGenerator.setGlobalConfig(new GlobalConfig()
                 // 输出目录
-                .setOutputDir(projectPath+ "server/src/main/java")
+                .setOutputDir(projectPath+ "/src/main/java")
                 // 是否覆盖
                 .setFileOverride(true)
                 //主键策略
@@ -110,10 +110,11 @@ public class CodeGenerator {
         PackageConfig packageConfig = new PackageConfig()
                 // 基本包路径
                 .setParent("com.lanwei.pmp.server")
-                .setModuleName(scanner("模块名"))
+                .setModuleName(scanner("模块名："))
                 // 设置Mapper包名
                 .setMapper("mapper")
                 .setService("service")
+                .setServiceImpl("service.impl")
                 .setController("controller")
                 .setEntity("entity");
         autoGenerator.setPackageInfo(packageConfig);
