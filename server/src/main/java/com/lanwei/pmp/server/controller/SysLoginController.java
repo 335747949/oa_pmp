@@ -67,11 +67,11 @@ public class SysLoginController extends AbstractController {
     public BaseResponse login(String username, String password, String captcha) {
         log.info("用户名：{} 密码：{} 验证码:{}", username, password, captcha);
 
-/*        //校验验证码
+        //校验验证码
         String kaptcha=ShiroUtil.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
         if (!kaptcha.equals(captcha)){
             return new BaseResponse(StatusCode.InvalidCode);
-        }*/
+        }
 
         try {
             //提交登录
